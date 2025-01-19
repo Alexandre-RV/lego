@@ -73,13 +73,15 @@ console.log("Number of shopping communities:", communityNames.length);
 // 2. Create a variable and assign it the list of sets by price from lowest to highest
 // 3. Log the variable
 
-function sortDealsByPrice(deals) {
-    return [...deals].sort((a, b) => a.price - b.price); // Ascending order
+// Define the sortDealsByDate function
+function sortDealsByDate(deals) {
+    // Sort deals by date in descending order (most recent first)
+    return deals.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
-const dealsSortedByPrice = sortDealsByPrice(deals);
-console.log("Deals sorted by price:", dealsSortedByPrice);
-
+// Call the function and log the sorted deals
+const sortedDeals = sortDealsByDate(BEST_DEALES);
+console.table(sortedDeals);
 
 // 🎯 TODO 5: Sort by date
 // 1. Create a function to sort the deals by date
@@ -541,12 +543,6 @@ const deal = {
 const profitability = (deal.retail - deal.price).toFixed(2);
 console.log(`Profitability: €${profitability}`);
 
-// 🎯 LAST TODO: Save in localStorage
-const MY_FAVORITE_DEALERS = [
-    "dealer1@example.com",
-    "dealer2@example.com",
-    "dealer3@example.com"
-];
 
 // Save to localStorage .
 localStorage.setItem("MY_FAVORITE_DEALERS", JSON.stringify(MY_FAVORITE_DEALERS));
