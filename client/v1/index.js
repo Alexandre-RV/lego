@@ -548,6 +548,6 @@ const MY_FAVORITE_DEALERS = [
     "dealer3@example.com"
 ];
 
-// Save to localStorage
+// Save to localStorage .
 localStorage.setItem("MY_FAVORITE_DEALERS", JSON.stringify(MY_FAVORITE_DEALERS));
 console.log("localStorage MY_FAVORITE_DEALERS:", localStorage.getItem("MY_FAVORITE_DEALERS"));
